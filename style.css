@@ -29,13 +29,23 @@ body{
   color:var(--text);
   line-height:1.55;
 
-  /* Darker pastel background */
   background:
-    radial-gradient(circle at 10% 15%, rgba(255,93,177,.35), transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(124,92,255,.35), transparent 45%),
-    radial-gradient(circle at 30% 80%, rgba(47,211,255,.35), transparent 45%),
-    linear-gradient(180deg, #2a2440 0%, #2f2b55 40%, #1f2f45 100%);
+    /* moon glow */
+    radial-gradient(circle at 80% 15%, rgba(255,255,255,.25), transparent 25%),
+
+    /* pink nebula */
+    radial-gradient(circle at 15% 25%, rgba(255,93,177,.35), transparent 40%),
+
+    /* purple nebula */
+    radial-gradient(circle at 85% 45%, rgba(124,92,255,.35), transparent 45%),
+
+    /* blue mist */
+    radial-gradient(circle at 40% 85%, rgba(47,211,255,.30), transparent 45%),
+
+    /* night sky */
+    linear-gradient(180deg, #0b0d1f 0%, #14153a 40%, #0a1f2f 100%);
 }
+
 
 /* Links */
 a{ color: var(--accent2); text-decoration:none; }
@@ -464,9 +474,11 @@ body::before{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(#ff5db1 1px, transparent 1px);
-  background-size: 80px 80px;
-  opacity:.05;
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 120px 120px, 80px 80px;
+  background-position: 0 0, 40px 60px;
+  opacity:.12;
   pointer-events:none;
 }
 
@@ -475,14 +487,18 @@ body::after{
   content:"";
   position:fixed;
   inset:0;
-  pointer-events:none;
   background:
-    radial-gradient(2px 2px at 12% 20%, #ff5db1, transparent),
-    radial-gradient(2px 2px at 35% 70%, #7c5cff, transparent),
-    radial-gradient(2px 2px at 60% 40%, #2fd3ff, transparent),
-    radial-gradient(2px 2px at 80% 75%, #ff5db1, transparent);
-  opacity:.25;
-  animation: float 18s linear infinite;
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.05), transparent 35%),
+    radial-gradient(circle at 70% 50%, rgba(255,255,255,.04), transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.03), transparent 45%);
+  filter: blur(40px);
+  animation: clouds 40s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes clouds{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-300px); }
 }
 
 @keyframes float{
@@ -755,3 +771,18 @@ body::before{
       Keep it for nav/buttons but stop the global underline animation */
 a::after{ display:none; }
 .pill:hover{ text-decoration:none; }
+
+.moon{
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #e7e7ff);
+  box-shadow:
+    0 0 60px rgba(255,255,255,.6),
+    0 0 120px rgba(124,92,255,.35);
+  opacity:.85;
+  pointer-events:none;
+}
