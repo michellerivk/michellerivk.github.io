@@ -272,8 +272,8 @@ a:hover{ text-decoration:underline; }
   gap: 10px;
 }
 .cardtitle h3{
-  margin:0;
-  font-size: 16px;
+  font-size: 18px !important;
+  font-weight: 900 !important;
 }
 .badge{
   font-size: 12px;
@@ -388,14 +388,11 @@ hr.sep{
 
 /* Gradient title text */
 .hero h1{
-  background: linear-gradient(90deg,
-    #ff5db1,
-  0%,
-    #7c5cff 40%,
-    #2fd3ff 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  color: #7c5cff !important; /* or #f5f3ff if you want softer white */
+  font-weight: 950 !important;
+  text-shadow: 0 14px 35px rgba(0,0,0,.45);
 }
 
 /* Floating glow effect */
@@ -600,8 +597,8 @@ body::before{
   padding: 34px 22px;
   border-radius: 28px;
   clip-path: polygon(
-    0% 0%, 92% 0%, 100% 18%,
-    100% 100%, 8% 100%, 0% 82%
+    0% 0%, 100% 0%, 100% 18%,
+    100% 100%, 8% 100%, 0% 100%
   );
   position: relative;
 }
@@ -641,8 +638,12 @@ body::before{
 
 /* 4) Project section title: underline glow */
 .section h2{
-  color: rgba(255,255,255,.92);
-  text-shadow: 0 8px 30px rgba(124,92,255,.35);
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  letter-spacing: .2px;
+  margin: 6px 0 14px !important;
+  color: rgba(255,255,255,.95) !important;
+  text-shadow: 0 10px 28px rgba(0,0,0,.35);
 }
 .section h2::after{
   content:"";
@@ -772,17 +773,3 @@ body::before{
 a::after{ display:none; }
 .pill:hover{ text-decoration:none; }
 
-.moon{
-  position: fixed;
-  top: 60px;
-  right: 80px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff, #e7e7ff);
-  box-shadow:
-    0 0 60px rgba(255,255,255,.6),
-    0 0 120px rgba(124,92,255,.35);
-  opacity:.85;
-  pointer-events:none;
-}
