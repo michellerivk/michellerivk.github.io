@@ -29,14 +29,12 @@ body{
   color:var(--text);
   line-height:1.55;
 
-  /* Pastel gradient background */
+  /* Darker pastel background */
   background:
-    radial-gradient(900px 600px at 15% 0%, rgba(255,93,177,.18), transparent 55%),
-    radial-gradient(900px 600px at 85% 10%, rgba(124,92,255,.16), transparent 55%),
-    radial-gradient(800px 520px at 50% 95%, rgba(47,211,255,.14), transparent 55%),
-    linear-gradient(180deg, var(--bg1), var(--bg2) 45%, var(--bg3));
-
-  background-attachment: fixed;
+    radial-gradient(circle at 10% 15%, rgba(255,93,177,.35), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(124,92,255,.35), transparent 45%),
+    radial-gradient(circle at 30% 80%, rgba(47,211,255,.35), transparent 45%),
+    linear-gradient(180deg, #2a2440 0%, #2f2b55 40%, #1f2f45 100%);
 }
 
 /* Links */
@@ -321,9 +319,6 @@ a:hover{ text-decoration:underline; }
   background: var(--panel2);
   box-shadow: var(--shadow);
   padding: 16px;
-
-  background: rgba(255,255,255,.95);
-
 }
 
 .h1{
@@ -526,5 +521,27 @@ a:hover::after{
     translateY(-6px)
     rotate(-0.6deg)
     scale(1.01);
+}
+
+.hero,
+.card,
+.panel{
+  background: rgba(255,255,255,.95);
+}
+
+.container{
+  position: relative;
+}
+
+.container::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,93,177,.15), transparent 60%),
+    radial-gradient(circle at 80% 10%, rgba(124,92,255,.15), transparent 60%),
+    radial-gradient(circle at 50% 90%, rgba(47,211,255,.15), transparent 60%);
+  filter: blur(40px);
+  z-index:-1;
 }
 
