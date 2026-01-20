@@ -148,7 +148,6 @@ a:hover{ text-decoration:underline; }
 .hero p{
   margin: 10px 0 0;
   color: var(--muted);
-  max-width: 72ch;
   position:relative;
 }
 
@@ -773,3 +772,65 @@ body::before{
 a::after{ display:none; }
 .pill:hover{ text-decoration:none; }
 
+/* Performance fixes: remove expensive layers */
+body::after{ display:none !important; }          /* removes blurred moving clouds */
+.container::before{ display:none !important; }   /* removes large blurred glow */
+.nav{ backdrop-filter: none !important; }        /* removes blur on nav */
+
+.hero{
+  width: 100%;
+  max-width: 100%;
+  background: rgba(255,255,255,.92) !important;
+}
+
+.hero p{
+  max-width: 80ch;         /* readable line length */
+  word-break: normal;
+  overflow-wrap: anywhere; /* prevents weird breaks */
+}
+
+html, body{
+  height: auto;         /* undo height:100% */
+  min-height: 100%;
+}
+
+body{
+  min-height: 100vh;    /* at least viewport */
+  background: url("assets/images/Background.png") center top / cover no-repeat fixed;
+  /* If fixed feels janky on your PC, switch 'fixed' -> 'scroll' */
+}
+
+/* Make sure nothing else overrides the body background */
+body{ background-color: #0b0d1f; } /* fallback color */
+
+/* Fix weird mid-sentence wrapping (disable columns anywhere) */
+.hero, .hero *{
+  column-count: auto !important;
+  column-width: auto !important;
+  columns: auto !important;
+}
+
+.hero p{
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;     /* remove any narrow measure causing early wraps */
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+/* Center hero heading + black outline */
+.hero h1{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* text outline */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0   3px 12px rgba(0,0,0,.45); /* soft depth */
+}
