@@ -374,3 +374,143 @@ hr.sep{
 @media (max-width: 860px){
   .media .ph{ grid-column: span 12; }
 }
+
+
+/* ========= PIZZAZZ MODE ========= */
+
+/* Gradient title text */
+.hero h1{
+  background: linear-gradient(90deg,
+    #ff5db1,
+  0%,
+    #7c5cff 40%,
+    #2fd3ff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+/* Floating glow effect */
+.card{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(255,93,177,.25);
+}
+
+/* Cute hover for buttons */
+.btn{
+  position: relative;
+  overflow:hidden;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg,
+    transparent 30%,
+    rgba(255,255,255,.5),
+    transparent 70%);
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+}
+
+.btn:hover::after{
+  transform: translateX(120%);
+}
+
+/* Bouncy hover */
+.btn:hover{
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Badge pop */
+.badge{
+  transition: transform .2s ease;
+}
+.badge:hover{
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Tags fun hover */
+.tag{
+  transition: all .2s ease;
+}
+.tag:hover{
+  background: linear-gradient(135deg,
+    rgba(255,93,177,.25),
+    rgba(124,92,255,.25));
+  color:#1f2240;
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+/* Card header glow */
+.thumb{
+  position: relative;
+}
+.thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at top,
+      rgba(255,255,255,.35),
+      transparent 60%);
+  opacity:.6;
+}
+
+/* Subtle sparkles floating */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(2px 2px at 12% 20%, #ff5db1, transparent),
+    radial-gradient(2px 2px at 35% 70%, #7c5cff, transparent),
+    radial-gradient(2px 2px at 60% 40%, #2fd3ff, transparent),
+    radial-gradient(2px 2px at 80% 75%, #ff5db1, transparent);
+  opacity:.25;
+  animation: float 18s linear infinite;
+}
+
+@keyframes float{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-200px); }
+}
+
+/* Fun underline on links */
+a{
+  position: relative;
+}
+a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:0;
+  height:2px;
+  background: var(--accent);
+  transition: width .25s ease;
+}
+a:hover::after{
+  width:100%;
+}
+
+/* Hero soft glow border */
+.hero{
+  box-shadow:
+    0 0 0 1px rgba(255,93,177,.25),
+    0 30px 60px rgba(124,92,255,.15);
+}
+
+/* Slight tilt on project cards */
+.card:hover{
+  transform:
+    translateY(-6px)
+    rotate(-0.6deg)
+    scale(1.01);
+}
+

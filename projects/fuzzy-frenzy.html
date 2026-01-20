@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Couch Codes | Michelle Rivkin</title>
+  <meta name="description" content="Couch Codes case study - Unity host + NodeJS server + phone web clients." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <strong>Michelle Rivkin</strong>
+        <span>Junior Unity Developer</span>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="../index.html#projects">← Back to Projects</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="panel">
+        <h1 class="h1">Couch Codes</h1>
+        <p class="sub">
+          A couch party “Codenames-style” game: players use their phones (HTML) to choose actions while the host runs the Unity game.
+        </p>
+
+        <div class="cta">
+          <a class="btn disabled" href="#">Playable build (coming soon)</a>
+          <!-- Add when ready -->
+          <!-- <a class="btn" href="https://github.com/irisgorelek/Fuzzy-Frenzy-Final-Project" target="_blank" rel="noreferrer">GitHub Repo</a> -->
+          <!-- <a class="btn" href="https://michelle.itch.io/..." target="_blank" rel="noreferrer">itch.io</a> -->
+          <!-- <a class="btn" href="https://youtu.be/..." target="_blank" rel="noreferrer">Gameplay Video</a> -->
+        </div>
+
+        <hr class="sep" />
+
+        <h2 style="margin:0 0 8px;font-size:16px;">What I built</h2>
+        <ul class="bullets">
+          <li><strong>Unity host</strong>: game state, round flow, UI, and input handling.</li>
+          <li><strong>NodeJS server</strong>: player sessions, real-time messaging, and synchronization.</li>
+          <li><strong>Phone web client (HTML)</strong>: lightweight UI for choosing actions and sending them to the host.</li>
+        </ul>
+
+        <hr class="sep" />
+
+        <h2 style="margin:0 0 8px;font-size:16px;">Technical highlights</h2>
+        <ul class="bullets">
+          <li>Designed a clear state machine: lobby → in-round → resolution → next round.</li>
+          <li>Built a join flow (room code / session) and managed disconnect/reconnect behavior.</li>
+          <li>Kept the phone UI minimal to reduce friction for non-gamers.</li>
+        </ul>
+
+        <hr class="sep" />
+
+        <h2 style="margin:0 0 8px;font-size:16px;">Media</h2>
+        <div class="media">
+          <div class="ph">Add screenshot or GIF</div>
+          <div class="ph">Add screenshot or GIF</div>
+          <div class="ph">Add screenshot or GIF</div>
+          <div class="ph">Add screenshot or GIF</div>
+        </div>
+
+        <hr class="sep" />
+
+        <h2 style="margin:0 0 8px;font-size:16px;">Status</h2>
+        <p style="margin:0;color:var(--muted)">
+          Final polish in progress (audio/music + minor UX refinements). Build will be published on itch.io after the final pass.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin:0 0 10px;font-size:16px;">Project details</h2>
+        <div class="meta">
+          <div class="row"><div class="k">Role</div><div class="v">Solo developer</div></div>
+          <div class="row"><div class="k">Platform</div><div class="v">PC / TV host + phones</div></div>
+          <div class="row"><div class="k">Tech</div><div class="v">Unity, C#, NodeJS, HTML</div></div>
+          <div class="row"><div class="k">Genre</div><div class="v">Couch party / word game</div></div>
+          <div class="row"><div class="k">Status</div><div class="v">Polish</div></div>
+        </div>
+
+        <hr class="sep" />
+
+        <!--
+        <h2 style="margin:0 0 8px;font-size:16px;">What recruiters should notice</h2>
+        <ul class="bullets">
+          <li>End-to-end ownership across client/server.</li>
+          <li>Real-time multiplayer state coordination.</li>
+          <li>Practical UI/UX decisions for party play.</li>
+        </ul>
+        -->
+        
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Michelle Rivkin.</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
