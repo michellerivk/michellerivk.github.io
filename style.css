@@ -321,6 +321,9 @@ a:hover{ text-decoration:underline; }
   background: var(--panel2);
   box-shadow: var(--shadow);
   padding: 16px;
+
+  background: rgba(255,255,255,.95);
+
 }
 
 .h1{
@@ -459,6 +462,17 @@ hr.sep{
       rgba(255,255,255,.35),
       transparent 60%);
   opacity:.6;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(#ff5db1 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity:.05;
+  pointer-events:none;
 }
 
 /* Subtle sparkles floating */
