@@ -4,8 +4,8 @@
   --bg2:#f3f3ff;      /* lilac */
   --bg3:#f0fbff;      /* baby blue */
 
-  --panel: rgba(255,255,255,.78);
-  --panel2: rgba(255,255,255,.62);
+  --panel: rgba(255,255,255,.92);
+  --panel2: rgba(255,255,255,.92);
 
   --text:#1f2240;
   --muted:#5b5f86;
@@ -35,6 +35,8 @@ body{
     radial-gradient(900px 600px at 85% 10%, rgba(124,92,255,.16), transparent 55%),
     radial-gradient(800px 520px at 50% 95%, rgba(47,211,255,.14), transparent 55%),
     linear-gradient(180deg, var(--bg1), var(--bg2) 45%, var(--bg3));
+
+  background-attachment: fixed;
 }
 
 /* Links */
@@ -221,6 +223,7 @@ a:hover{ text-decoration:underline; }
 
 .card{
   grid-column: span 6;
+  position: relative;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--panel2);
@@ -233,7 +236,10 @@ a:hover{ text-decoration:underline; }
 
 /* Thumbnails */
 .thumb{
-  height: 170px;
+  position: relative;
+  z-index: 0;
+  height: 140px;
+  flex-shrink: 0;
   border-bottom: 1px solid var(--line);
   display:flex;
   align-items:center;
@@ -241,11 +247,10 @@ a:hover{ text-decoration:underline; }
   color: rgba(31,34,64,.8);
   font-weight:800;
   letter-spacing:.4px;
-  background:
-    linear-gradient(135deg,
-      rgba(255,93,177,.22),
-      rgba(124,92,255,.18),
-      rgba(47,211,255,.16));
+  background: linear-gradient(135deg,
+    rgba(255,93,177,.22),
+    rgba(124,92,255,.18),
+    rgba(47,211,255,.16));
 }
 
 /* Card content */
@@ -368,23 +373,4 @@ hr.sep{
 }
 @media (max-width: 860px){
   .media .ph{ grid-column: span 12; }
-}
-/* Ensure each card establishes its own stacking context */
-.card{
-  position: relative;
-  overflow: hidden;  /* keep header inside card */
-}
-
-/* Make the thumb strictly a top section (no overlay) */
-.thumb{
-  position: relative;
-  z-index: 0;
-  height: 140px;           /* smaller looks cleaner */
-  flex-shrink: 0;
-}
-
-/* Prevent any weird overlay from pseudo-elements */
-.thumb::before,
-.thumb::after{
-  content: none !important;
 }
