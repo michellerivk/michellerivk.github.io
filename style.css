@@ -369,3 +369,22 @@ hr.sep{
 @media (max-width: 860px){
   .media .ph{ grid-column: span 12; }
 }
+/* Ensure each card establishes its own stacking context */
+.card{
+  position: relative;
+  overflow: hidden;  /* keep header inside card */
+}
+
+/* Make the thumb strictly a top section (no overlay) */
+.thumb{
+  position: relative;
+  z-index: 0;
+  height: 140px;           /* smaller looks cleaner */
+  flex-shrink: 0;
+}
+
+/* Prevent any weird overlay from pseudo-elements */
+.thumb::before,
+.thumb::after{
+  content: none !important;
+}
