@@ -1,43 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Your Name | Unity Developer</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michelle Rivk | Junior Unity Developer</title>
+  <meta name="description" content="Junior Unity Developer portfolio: Unity, C#, mobile + multiplayer projects." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <strong>Michelle Rivk</strong>
+        <span>Junior Unity Developer (Unity / C#)</span>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </div>
 
-<header>
-<h1>Your Name</h1>
-<p>Unity Game Developer</p>
-<nav>
-<a href="#projects">Projects</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <div class="hero">
+      <h1>Unity developer focused on gameplay systems, mobile, and multiplayer.</h1>
+      <p>
+        I build player-facing mechanics (controls, UI, progression) and the supporting systems behind them.
+        Below are selected projects with short technical highlights, media, and links.
+      </p>
 
-<section id="projects">
-<h2>Projects</h2>
+      <div class="tags">
+        <span class="tag">Unity</span>
+        <span class="tag">C#</span>
+        <span class="tag">Gameplay Systems</span>
+        <span class="tag">Mobile</span>
+        <span class="tag">UI</span>
+        <span class="tag">Networking (Unity + NodeJS)</span>
+      </div>
 
-<div class="project">
-<h3>Game Title</h3>
-<p>Short description...</p>
-<a href="#">GitHub Repo</a>
-<a class="disabled">Playable build (coming soon)</a>
-</div>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <!-- Optional: add a resume PDF in /assets and link it here -->
+        <!-- <a class="btn" href="assets/MichelleRivk_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a> -->
+        <!-- Optional links -->
+        <!-- <a class="btn" href="https://github.com/michellerivk" target="_blank" rel="noreferrer">GitHub</a> -->
+        <!-- <a class="btn" href="https://www.linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn</a> -->
+      </div>
+    </div>
 
-</section>
+    <div id="projects" class="section">
+      <h2>Projects</h2>
 
-<section id="about">
-<h2>About</h2>
-<p>Short bio...</p>
-</section>
+      <div class="grid">
+        <!-- Couch Codes -->
+        <div class="card">
+          <div class="thumb">Couch Codes</div>
+          <div class="cardbody">
+            <div class="cardtitle">
+              <h3>Couch Codes</h3>
+              <span class="badge">Solo • Multiplayer</span>
+            </div>
+            <p>
+              A couch party “Codenames-style” game where players use their phones (HTML) to submit actions while the host runs the Unity game.
+            </p>
+            <ul class="bullets">
+              <li>Built end-to-end: Unity host + NodeJS server + phone web clients.</li>
+              <li>Real-time session flow: join, lobby, actions, and round transitions.</li>
+              <li>Polish pending: final audio pass + minor UX refinements.</li>
+            </ul>
+            <div class="cardlinks">
+              <a class="btn" href="projects/couch-codes.html">Case Study</a>
+              <a class="btn disabled" href="#">Playable (coming soon)</a>
+              <!-- Add when ready -->
+              <!-- <a class="btn" href="https://github.com/..." target="_blank" rel="noreferrer">GitHub</a> -->
+              <!-- <a class="btn" href="https://michelle.itch.io/..." target="_blank" rel="noreferrer">itch.io</a> -->
+            </div>
+          </div>
+        </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: you@email.com</p>
-</section>
+        <!-- Tadpole Trouble -->
+        <div class="card">
+          <div class="thumb">Tadpole Trouble</div>
+          <div class="cardbody">
+            <div class="cardtitle">
+              <h3>Tadpole Trouble</h3>
+              <span class="badge">Team • Singleplayer</span>
+            </div>
+            <p>
+              Top-down maze game about three frog sisters saving their swamp from a polluting factory.
+            </p>
+            <ul class="bullets">
+              <li>Character switching mechanic (Q) to swap between 3 sisters.</li>
+              <li>Designed a clear “one-level” gameplay loop with win condition.</li>
+              <li>Team project (3 developers).</li>
+            </ul>
+            <div class="cardlinks">
+              <a class="btn" href="projects/tadpole-trouble.html">Case Study</a>
+              <a class="btn disabled" href="#">Playable (coming soon)</a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Life-Balance -->
+        <div class="card">
+          <div class="thumb">Life-Balance</div>
+          <div class="cardbody">
+            <div class="cardtitle">
+              <h3>Life-Balance</h3>
+              <span class="badge">Team • Mobile</span>
+            </div>
+            <p>
+              Mobile game where you stack life tasks on a character’s back—keep the load balanced so nothing falls.
+            </p>
+            <ul class="bullets">
+              <li>Drag-and-drop placement mechanic for adding new items.</li>
+              <li>Infinite gameplay loop with escalating difficulty.</li>
+              <li>Upload pending: resolving layout bugs + final polish.</li>
+            </ul>
+            <div class="cardlinks">
+              <a class="btn" href="projects/life-balance.html">Case Study</a>
+              <a class="btn disabled" href="#">Playable (after polish)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fuzzy Frenzy -->
+        <div class="card">
+          <div class="thumb">Fuzzy Frenzy</div>
+          <div class="cardbody">
+            <div class="cardtitle">
+              <h3>Fuzzy Frenzy</h3>
+              <span class="badge">Team • In Development</span>
+            </div>
+            <p>
+              Match-3 mobile game (Candy Crush style), but you match animals. Planned 5–10 levels and a leaderboard.
+            </p>
+            <ul class="bullets">
+              <li>Core loop in progress; media planned after 10/3 milestone.</li>
+              <li>Level structure + progression planned for 5–10 levels.</li>
+              <li>Considering multiplayer leaderboard.</li>
+            </ul>
+            <div class="cardlinks">
+              <a class="btn" href="projects/fuzzy-frenzy.html">Case Study</a>
+              <a class="btn disabled" href="#">Media coming soon</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="about" class="section">
+      <h2>About</h2>
+      <div class="panel">
+        <p style="margin:0;color:var(--muted)">
+          I’m a junior Unity developer focused on building clear gameplay mechanics and the systems that support them.
+          I enjoy projects that combine player input, UI feedback, and real-time state management (especially multiplayer).
+        </p>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="panel">
+        <p style="margin:0;color:var(--muted)">
+          Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Michelle Rivk. Built with GitHub Pages.</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
